@@ -1,19 +1,18 @@
 //
-//  NewPostViewController.h
+//  EditPostViewController.h
 //  mvcPosts
 //
-//  Created by Jason Koceja on 9/10/13.
+//  Created by Jason Koceja on 9/11/13.
 //  Copyright (c) 2013 Jason Koceja. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
-#import "PostColor.h"
-#import "PostViewController.h"
 
-@interface NewPostViewController : UIViewController
+@interface EditPostViewController : UIViewController
 
-@property (nonatomic, strong) Post *emptyPost;
+@property (nonatomic, strong) Post *editPost;
+//@property (nonatomic, strong) Post *tempPost;
 @property (nonatomic, strong) NSMutableArray *postArray;
 @property (nonatomic, strong) IBOutlet UITextField *titleInput;
 @property (nonatomic, strong) IBOutlet UITextField *usernameInput;
@@ -22,8 +21,8 @@
 @property (nonatomic, strong) PostColor *postColor;
 
 @property int MIN_LENGTH;
+@property int index;
 
-- (IBAction)postNewPost:(id)sender;
-
+- (IBAction)postEditedPost:(id)sender;
 
 @end

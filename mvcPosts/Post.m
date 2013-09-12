@@ -17,18 +17,20 @@
         return nil;
     }
     
-    self.title = [aDecoder decodeObjectForKey:@"Title"];
-    self.username = [aDecoder decodeObjectForKey:@"Username"];
-    self.content = [aDecoder decodeObjectForKey:@"Content"];
+    _title = [aDecoder decodeObjectForKey:@"Title"];
+    _username = [aDecoder decodeObjectForKey:@"Username"];
+    _content = [aDecoder decodeObjectForKey:@"Content"];
+    _color = [aDecoder decodeObjectForKey:@"Color"];
     
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     
-    [aCoder encodeObject:self.title forKey:@"Title"];
-    [aCoder encodeObject:self.username forKey:@"Username"];
-    [aCoder encodeObject:self.content forKey:@"Content"];
+    [aCoder encodeObject:_title forKey:@"Title"];
+    [aCoder encodeObject:_username forKey:@"Username"];
+    [aCoder encodeObject:_content forKey:@"Content"];
+    [aCoder encodeObject:_color forKey:@"Color"];
 }
 
 - (id)initWithTitle:(NSString *)title{
@@ -38,8 +40,8 @@
         _title = title;
         _username = nil;
         _content = nil;
-        NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:0] ;
-        _timeStamp = [self formattedDate:date];
+        _color = [PostColor makeRandomPostColor];
+        _timeStamp = [self formattedDate];
     }
     //    NSLog(@"Post: %@", self.title);
     return self;
@@ -49,11 +51,17 @@
     return [[self alloc] initWithTitle:title];
 }
 
-- (NSString *)formattedDate:(NSDate *)date{
+- (NSString *)formattedDate{
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:0] ;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [dateFormatter setDateFormat:@"EE MMM,dd"];
     return [dateFormatter stringFromDate:date];
+}
+
+- (BOOL)isEditedPost:(BOOL)edited{
+    _timeStamp = [self formattedDate];
+    return YES;
 }
 
 @end

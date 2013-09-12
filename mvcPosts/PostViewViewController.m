@@ -7,6 +7,8 @@
 //
 
 #import "PostViewViewController.h"
+#import "EditPostViewController.h"
+#import "PostColor.h"
 
 @interface PostViewViewController ()
 
@@ -18,10 +20,26 @@
     [super viewDidLoad];
     
     self.title = _post.title;
-    _usernameLabel.text = _post.username;
+    _usernameLabel.text = [NSString stringWithFormat:@"By: %@", _post.username];
     _dateLabel.text = _post.timeStamp;
     _contentLabel.text = _post.content;
+    _colorLayerView.backgroundColor = _post.color;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showEditPost"]){
+        NSLog(@"segue showEditPost");
+        
+        EditPostViewController *vc = (EditPostViewController *)segue.destinationViewController;
+     
+        vc.editPost = _post;
+        vc.postArray = _posts;
+        vc.index = _index;
+    }
 }
 
 @end

@@ -12,7 +12,6 @@
 @interface PostViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *posts;
-//@property (nonatomic, strong) NSArray *tempArray;
 @property (nonatomic, strong) Post *post;
 
 

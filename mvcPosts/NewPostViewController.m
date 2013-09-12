@@ -14,20 +14,18 @@
 
 @implementation NewPostViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // customize
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"init color: %@", _postColor);
+    //    _postColor = [self getRandomColor];
+    _postColor = [PostColor makeRandomPostColor];
+    NSLog(@"init color: %@", _postColor);
     _emptyPost = nil;
     _MIN_LENGTH = 5;
+    
+    _postColorLayerView.backgroundColor = _postColor;
     NSLog(@"NewPostViewController has %d objects from segue", [_postArray count]);
     
 }
@@ -38,11 +36,12 @@
         _emptyPost = [Post postWithTitle:_titleInput.text];
         _emptyPost.username = _usernameInput.text;
         _emptyPost.content = _contentInput.text;
+        _emptyPost.color = _postColor;
         NSLog(@"makeNewPost was callled");
         
         return YES;
     }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter a title, username, and a complete post" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter a complete title, username, and a complete post" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
     return NO;
 }
@@ -62,5 +61,15 @@
         NSLog(@"No post created");
         //    NSLog(@"NewPostView - first post: %@", _postArray[0]);
     }
+    
 }
+
 @end
+
+
+
+
+
+
+
+

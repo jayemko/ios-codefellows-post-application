@@ -8,6 +8,7 @@
 
 #import "PostViewController.h"
 #import "NewPostViewController.h"
+#import "PostViewViewController.h"
 
 @interface PostViewController ()
 
@@ -43,8 +44,7 @@
     // add some authors to example posts
     for (int i = 0; i < [_posts count]; i++){
         Post *temp = _posts[i];
-        NSString *tempString = [NSString stringWithFormat:@"By: %@", usernames[i]];
-        temp.username = tempString;
+        temp.username = usernames[i];
         temp.content = [self fillContent];
     }
     
@@ -74,6 +74,7 @@
     Post *post = [self.posts objectAtIndex:indexPath.row];
     
     cell.textLabel.text = post.title;
+    
     return cell;
 }
 
@@ -82,9 +83,14 @@
     if([segue.identifier isEqualToString:@"showPost"]){
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        int idx = indexPath.row;
         Post *post = [self.posts objectAtIndex:indexPath.row];
         //        NSLog(@"prePareForSegue - Post: %@", _post.title);
-        [segue.destinationViewController setPost:post];
+        
+        PostViewViewController *pvvc = (PostViewViewController *)segue.destinationViewController;
+        [pvvc setPost:post];
+        [pvvc setIndex:idx];
+        pvvc.posts = _posts;
     }
     
     if([segue.identifier isEqualToString:@"showNewPost"]){

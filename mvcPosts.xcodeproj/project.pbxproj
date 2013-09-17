@@ -23,6 +23,12 @@
 		3C1FF2FA17DF60610050B803 /* mvcPostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FF2F917DF60610050B803 /* mvcPostsTests.m */; };
 		3C1FF30517DF61480050B803 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FF30417DF61480050B803 /* Post.m */; };
 		3C1FF30817DF67220050B803 /* PostViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1FF30717DF67220050B803 /* PostViewViewController.m */; };
+		3C3CFCAA17E796C700AC5F1E /* NSData+NSRBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFC9E17E796C700AC5F1E /* NSData+NSRBase64.m */; };
+		3C3CFCAB17E796C700AC5F1E /* NSString+NSRInflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFCA017E796C700AC5F1E /* NSString+NSRInflection.m */; };
+		3C3CFCAC17E796C700AC5F1E /* NSRConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFCA317E796C700AC5F1E /* NSRConfig.m */; };
+		3C3CFCAD17E796C700AC5F1E /* NSRRemoteManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFCA517E796C700AC5F1E /* NSRRemoteManagedObject.m */; };
+		3C3CFCAE17E796C700AC5F1E /* NSRRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFCA717E796C700AC5F1E /* NSRRemoteObject.m */; };
+		3C3CFCAF17E796C700AC5F1E /* NSRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CFCA917E796C700AC5F1E /* NSRRequest.m */; };
 		3C45CA8717E0D19200801972 /* PostColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C45CA8617E0D19200801972 /* PostColor.m */; };
 		3C45CA8A17E1235D00801972 /* EditPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C45CA8917E1235D00801972 /* EditPostViewController.m */; };
 		3C7B27C517DFC5700010C15F /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B27C417DFC5700010C15F /* NewPostViewController.m */; };
@@ -62,6 +68,19 @@
 		3C1FF30417DF61480050B803 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3C1FF30617DF67220050B803 /* PostViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewViewController.h; sourceTree = "<group>"; };
 		3C1FF30717DF67220050B803 /* PostViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewViewController.m; sourceTree = "<group>"; };
+		3C3CFC9D17E796C700AC5F1E /* NSData+NSRBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSRBase64.h"; sourceTree = "<group>"; };
+		3C3CFC9E17E796C700AC5F1E /* NSData+NSRBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSRBase64.m"; sourceTree = "<group>"; };
+		3C3CFC9F17E796C700AC5F1E /* NSString+NSRInflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSRInflection.h"; sourceTree = "<group>"; };
+		3C3CFCA017E796C700AC5F1E /* NSString+NSRInflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSRInflection.m"; sourceTree = "<group>"; };
+		3C3CFCA117E796C700AC5F1E /* NSRails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRails.h; sourceTree = "<group>"; };
+		3C3CFCA217E796C700AC5F1E /* NSRConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRConfig.h; sourceTree = "<group>"; };
+		3C3CFCA317E796C700AC5F1E /* NSRConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRConfig.m; sourceTree = "<group>"; };
+		3C3CFCA417E796C700AC5F1E /* NSRRemoteManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRRemoteManagedObject.h; sourceTree = "<group>"; };
+		3C3CFCA517E796C700AC5F1E /* NSRRemoteManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRRemoteManagedObject.m; sourceTree = "<group>"; };
+		3C3CFCA617E796C700AC5F1E /* NSRRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRRemoteObject.h; sourceTree = "<group>"; };
+		3C3CFCA717E796C700AC5F1E /* NSRRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRRemoteObject.m; sourceTree = "<group>"; };
+		3C3CFCA817E796C700AC5F1E /* NSRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRRequest.h; sourceTree = "<group>"; };
+		3C3CFCA917E796C700AC5F1E /* NSRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRRequest.m; sourceTree = "<group>"; };
 		3C45CA8517E0D19200801972 /* PostColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostColor.h; sourceTree = "<group>"; };
 		3C45CA8617E0D19200801972 /* PostColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostColor.m; sourceTree = "<group>"; };
 		3C45CA8817E1235D00801972 /* EditPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPostViewController.h; sourceTree = "<group>"; };
@@ -143,6 +162,16 @@
 				3C1FF2E317DF60610050B803 /* PostViewController.h */,
 				3C1FF2E417DF60610050B803 /* PostViewController.m */,
 				3C1FF2E617DF60610050B803 /* Images.xcassets */,
+				3C3CFC9C17E796C700AC5F1E /* Categories */,
+				3C3CFCA117E796C700AC5F1E /* NSRails.h */,
+				3C3CFCA217E796C700AC5F1E /* NSRConfig.h */,
+				3C3CFCA317E796C700AC5F1E /* NSRConfig.m */,
+				3C3CFCA417E796C700AC5F1E /* NSRRemoteManagedObject.h */,
+				3C3CFCA517E796C700AC5F1E /* NSRRemoteManagedObject.m */,
+				3C3CFCA617E796C700AC5F1E /* NSRRemoteObject.h */,
+				3C3CFCA717E796C700AC5F1E /* NSRRemoteObject.m */,
+				3C3CFCA817E796C700AC5F1E /* NSRRequest.h */,
+				3C3CFCA917E796C700AC5F1E /* NSRRequest.m */,
 				3C1FF2D517DF60610050B803 /* Supporting Files */,
 			);
 			path = mvcPosts;
@@ -175,6 +204,17 @@
 				3C1FF2F617DF60610050B803 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C3CFC9C17E796C700AC5F1E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3C3CFC9D17E796C700AC5F1E /* NSData+NSRBase64.h */,
+				3C3CFC9E17E796C700AC5F1E /* NSData+NSRBase64.m */,
+				3C3CFC9F17E796C700AC5F1E /* NSString+NSRInflection.h */,
+				3C3CFCA017E796C700AC5F1E /* NSString+NSRInflection.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +317,18 @@
 			files = (
 				3C1FF2DF17DF60610050B803 /* PostAppDelegate.m in Sources */,
 				3C45CA8717E0D19200801972 /* PostColor.m in Sources */,
+				3C3CFCAE17E796C700AC5F1E /* NSRRemoteObject.m in Sources */,
+				3C3CFCAF17E796C700AC5F1E /* NSRRequest.m in Sources */,
 				3C1FF2DB17DF60610050B803 /* main.m in Sources */,
+				3C3CFCAC17E796C700AC5F1E /* NSRConfig.m in Sources */,
 				3C1FF2E517DF60610050B803 /* PostViewController.m in Sources */,
 				3C7B27C517DFC5700010C15F /* NewPostViewController.m in Sources */,
 				3C1FF30517DF61480050B803 /* Post.m in Sources */,
+				3C3CFCAB17E796C700AC5F1E /* NSString+NSRInflection.m in Sources */,
 				3C45CA8A17E1235D00801972 /* EditPostViewController.m in Sources */,
 				3C1FF30817DF67220050B803 /* PostViewViewController.m in Sources */,
+				3C3CFCAD17E796C700AC5F1E /* NSRRemoteManagedObject.m in Sources */,
+				3C3CFCAA17E796C700AC5F1E /* NSData+NSRBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

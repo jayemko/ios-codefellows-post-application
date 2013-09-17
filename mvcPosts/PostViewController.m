@@ -9,6 +9,7 @@
 #import "PostViewController.h"
 #import "NewPostViewController.h"
 #import "PostViewViewController.h"
+#import "NSRails.h"
 
 @interface PostViewController ()
 
@@ -20,7 +21,9 @@
     self = [super initWithStyle:style];
     if(self){
         // make custom
+
     }
+    
     return self;
 }
 
@@ -28,32 +31,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // get data from rails server
+//    [Post remoteAllAsync:^(NSArray *allRemote, NSError *error) {
+//        _posts = [NSMutableArray arrayWithArray:allRemote];
+//       [self.tableView reloadData];
+//    }];
     
-    // create an array of posts pre-titled
-    _posts = [NSMutableArray arrayWithObjects:[Post postWithTitle:@"Welcome to Code Fellows"],
-              [Post postWithTitle:@"This is Where the Title Goes"],
-              [Post postWithTitle:@"This Is Where Another Title Goes"],
-              [Post postWithTitle:@"And Another Title"],
-              [Post postWithTitle:@"One More Title In This Cell"],
-              [Post postWithTitle:@"Assignments"],
-              [Post postWithTitle:@"Modules"], nil];
-    
-    // array of authors to add to the posts
-    NSArray *usernames = [NSArray arrayWithObjects:@"Batman", @"Robin", @"Joker", @"Bane", @"Two Face", @"Penguin", @"Riddler", nil];
-    
-    // add some authors to example posts
-    for (int i = 0; i < [_posts count]; i++){
-        Post *temp = _posts[i];
-        temp.username = usernames[i];
-        temp.content = [self fillContent];
-    }
-    
-    [NSKeyedUnarchiver unarchiveObjectWithFile:@"post_storage"];
+    // load the rails server with some posts
+    _posts = [self fillPostsWithPosts];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
-    [NSKeyedArchiver archiveRootObject:_posts toFile:@"post_storage"];
 }
 
 #pragma mark - Table view data source
@@ -64,16 +54,18 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.posts count];
+    return [_posts count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifer = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer forIndexPath:indexPath];
-    //    NSLog(@"Cell Identifier: %@", cell);
-    Post *post = [self.posts objectAtIndex:indexPath.row];
+//    NSLog(@"Cell Identifier: %@", cell);
+    
+    Post *post = [_posts objectAtIndex:indexPath.row];
     
     cell.textLabel.text = post.title;
+    cell.backgroundColor = [PostColor makePostColor:post.postcolor];
     
     return cell;
 }
@@ -94,12 +86,40 @@
     }
     
     if([segue.identifier isEqualToString:@"showNewPost"]){
-        NSLog(@"segue showNewPost");
+//        NSLog(@"segue showNewPost");
         
         NewPostViewController *pvc = (NewPostViewController *)segue.destinationViewController;
         pvc.postArray = _posts;
         
     }
+}
+
+- (NSMutableArray *)fillPostsWithPosts{
+    
+    // create an array of posts pre-titled
+    NSMutableArray *tempArray = [NSMutableArray arrayWithObjects:[Post postWithTitle:@"Welcome to Code Fellows"],
+                                 [Post postWithTitle:@"This is Where the Title Goes"],
+                                 [Post postWithTitle:@"This Is Where Another Title Goes"],
+                                 [Post postWithTitle:@"And Another Title"],
+                                 [Post postWithTitle:@"One More Title In This Cell"],
+                                 [Post postWithTitle:@"Assignments"],
+                                 [Post postWithTitle:@"Modules"], nil];
+    
+    // array of authors to add to the posts
+    NSArray *usernames = [NSArray arrayWithObjects:@"Batman", @"Robin", @"Joker", @"Bane", @"Two Face", @"Penguin", @"Riddler", nil];
+    
+    NSError *error;
+    
+    // add some authors to example posts
+    for (int i = 0; i < [tempArray count]; i++){
+        Post *temp = tempArray[i];
+        temp.username = usernames[i];
+        temp.content = [self fillContent];
+        NSLog(@"Color: %d", temp.postcolor);
+        temp.postcolor = [PostColor makeRandomPostColor];
+        [temp remoteCreate:&error];
+    }
+    return tempArray;
 }
 
 // filler text

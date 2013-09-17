@@ -18,26 +18,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"init color: %@", _postColor);
+//    NSLog(@"init color: %@", _postColor);
     //    _postColor = [self getRandomColor];
     _postColor = [PostColor makeRandomPostColor];
-    NSLog(@"init color: %@", _postColor);
+//    NSLog(@"init color: %@", _postColor);
     _emptyPost = nil;
     _MIN_LENGTH = 5;
     
-    _postColorLayerView.backgroundColor = _postColor;
+    _postColorLayerView.backgroundColor = [PostColor makePostColor:_postColor];
     NSLog(@"NewPostViewController has %d objects from segue", [_postArray count]);
     
 }
 
 -(BOOL)makeNewPost{
     
+    NSError *error;
+    
     if ([_titleInput.text length] > _MIN_LENGTH && [_usernameInput.text length] > _MIN_LENGTH && [_contentInput.text length] > _MIN_LENGTH){
         _emptyPost = [Post postWithTitle:_titleInput.text];
         _emptyPost.username = _usernameInput.text;
         _emptyPost.content = _contentInput.text;
-        _emptyPost.color = _postColor;
+        _emptyPost.postcolor = _postColor;
         NSLog(@"makeNewPost was callled");
+        [_emptyPost remoteCreate:&error ];
         
         return YES;
     }
@@ -53,7 +56,9 @@
     
     if(_emptyPost){
         [self.navigationController popToRootViewControllerAnimated:YES];
+        
         [_postArray addObject:_emptyPost];
+        
         NSLog(@"The post %@ was created", _emptyPost.title);
         NSLog(@"The array has %d objects", [_postArray count]);
     }else{

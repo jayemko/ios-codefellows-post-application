@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "PostColor.h"
+#import "NSRails.h"
 
-@interface Post : NSObject <NSCoding>
+@interface Post : NSRRemoteObject
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSString *timeStamp;
-@property (nonatomic, strong) PostColor *color;
+@property (nonatomic, strong) NSString *timestamp;
+//@property (nonatomic, strong) PostColor *color;
+@property int postcolor;
 
 // designated initializer
 - (id)initWithTitle:(NSString *)title;

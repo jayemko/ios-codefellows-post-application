@@ -21,9 +21,9 @@
     
     self.title = _post.title;
     _usernameLabel.text = [NSString stringWithFormat:@"By: %@", _post.username];
-    _dateLabel.text = _post.timeStamp;
+    _dateLabel.text = _post.timestamp;
     _contentLabel.text = _post.content;
-    _colorLayerView.backgroundColor = _post.color;
+    _colorLayerView.backgroundColor = [PostColor makePostColor:_post.postcolor];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

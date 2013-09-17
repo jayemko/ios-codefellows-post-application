@@ -23,15 +23,17 @@
     return [[self alloc] initWithPColor:(int)color];
 }
 
-+ (PostColor *)makeRandomPostColor{
++ (int)makeRandomPostColor{
     int color = arc4random() % 8;
-    return [PostColor makePostColor:color];
+    return color;
 }
+
 
 - (PostColor*)getPostColor:(int)color{
     
     // make new color
     switch (color) {
+            _remoteColor = color;
         case PCyan:
             return (PostColor*)[UIColor cyanColor];
         case PMagenta:
@@ -53,7 +55,5 @@
     }
     return nil;
 }
-
-
 
 @end

@@ -10,29 +10,6 @@
 
 @implementation Post
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
-    self = [super init];
-    
-    if(!self){
-        return nil;
-    }
-    
-    _title = [aDecoder decodeObjectForKey:@"Title"];
-    _username = [aDecoder decodeObjectForKey:@"Username"];
-    _content = [aDecoder decodeObjectForKey:@"Content"];
-    _color = [aDecoder decodeObjectForKey:@"Color"];
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder{
-    
-    [aCoder encodeObject:_title forKey:@"Title"];
-    [aCoder encodeObject:_username forKey:@"Username"];
-    [aCoder encodeObject:_content forKey:@"Content"];
-    [aCoder encodeObject:_color forKey:@"Color"];
-}
-
 - (id)initWithTitle:(NSString *)title{
     self = [super init];
     
@@ -40,8 +17,9 @@
         _title = title;
         _username = nil;
         _content = nil;
-        _color = [PostColor makeRandomPostColor];
-        _timeStamp = [self formattedDate];
+        _postcolor = [PostColor makeRandomPostColor];
+        _timestamp = [self formattedDate];
+        
     }
     //    NSLog(@"Post: %@", self.title);
     return self;
@@ -54,13 +32,13 @@
 - (NSString *)formattedDate{
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:0] ;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setDateFormat:@"EE MMM,dd"];
+    //    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"EE MMM,dd HH:mm"];
     return [dateFormatter stringFromDate:date];
 }
 
 - (BOOL)isEditedPost:(BOOL)edited{
-    _timeStamp = [self formattedDate];
+    _timestamp = [self formattedDate];
     return YES;
 }
 

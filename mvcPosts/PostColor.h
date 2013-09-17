@@ -22,10 +22,11 @@
 }
 
 @property (nonatomic, strong) PostColor *PColor;
+@property int remoteColor;
 
 // convenience constructor
 + (PostColor *)makePostColor:(int)color;
-+ (PostColor *)makeRandomPostColor;
++ (int)makeRandomPostColor;
 // designated initializer
 - (PostColor *)initWithPColor:(int)color;
 

@@ -24,8 +24,8 @@
     _titleInput.text = _editPost.title;
     _usernameInput.text = _editPost.username;
     _contentInput.text = _editPost.content;
-    _postColor = _editPost.color;
-    _postColorLayerView.backgroundColor = _postColor;
+    _postColor = _editPost.postcolor;
+    _postColorLayerView.backgroundColor = [PostColor makePostColor:_postColor];
     
     
 //    NSLog(@"EditPostViewController has %d objects from segue", [_postArray count]);
@@ -44,7 +44,7 @@
         _editPost = [Post postWithTitle:_titleInput.text];
         _editPost.username = _usernameInput.text;
         _editPost.content = _contentInput.text;
-        _editPost.color = _postColor;
+        _editPost.postcolor = _postColor;
 //        NSLog(@"makeNewPost was callled");
         
         return YES;

@@ -20,5 +20,6 @@
 @property int index;
 
 - (IBAction)pressedShareButton;
+- (IBAction)pressedTwitterButton;
 
 @end

@@ -43,4 +43,14 @@
     return YES;
 }
 
+#pragma mark - ActivitySource items
+
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController{
+    return [NSString stringWithString:_content];
+}
+
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType{
+    return [NSString stringWithString:_content];
+}
+
 @end

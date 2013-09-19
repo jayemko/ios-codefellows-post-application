@@ -202,6 +202,12 @@
                                                     <action selector="pressedShareButton" destination="beA-Jj-kvH" id="UK8-d0-aJW"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem image="facebook-25.png" width="44" id="eeU-u2-zlP"/>
+                                            <barButtonItem image="twitter-25.png" width="44" id="aGk-BJ-fVh">
+                                                <connections>
+                                                    <action selector="pressedTwitterButton" destination="beA-Jj-kvH" id="gzg-Dk-PZB"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -253,6 +259,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="facebook-25.png" width="25" height="25"/>
+        <image name="twitter-25.png" width="25" height="25"/>
         <image name="upload-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

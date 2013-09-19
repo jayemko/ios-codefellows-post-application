@@ -10,7 +10,7 @@
 #import "PostColor.h"
 #import "NSRails.h"
 
-@interface Post : NSRRemoteObject
+@interface Post : NSRRemoteObject <UIActivityItemSource>
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *username;

@@ -51,6 +51,52 @@
     [self presentViewController:sharesheet animated:YES completion:nil];
 }
 
+#pragma mark - Facebook items
+
+- (IBAction)pressedFacebookButton{
+    [self showFacebookSheet];
+}
+
+- (void)showFacebookSheet{
+    
+    // create instance of facebook sheet
+    SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    // need to make sure any UI update occur on the main thread
+    facebookSheet.completionHandler = ^(SLComposeViewControllerResult result){
+        
+        switch (result) {
+                // user cancelled without posting
+            case SLComposeViewControllerResultCancelled:
+                break;
+                
+            case SLComposeViewControllerResultDone:
+                break;
+        }
+        
+        // dismiss the facebook sheet
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:NO completion:^{
+                NSLog(@"Facebook sheet has been dismissed");
+            }];
+        });
+    };
+    
+    // set initial content of the facebook post
+    [facebookSheet setInitialText:[NSString stringWithFormat:@"%@: By %@ \n %@",_post.title, _post.username, _post.content]];
+//    
+//    //  add an URL to the post
+//    if (![facebookSheet addURL:[NSURL URLWithString:@"http://www.jayemko.com/"]]){
+//        NSLog(@"Unable to add the URL!");
+//    }
+    
+    // present the tweet sheet to the user
+    [self presentViewController:facebookSheet animated:NO completion:^{
+        NSLog(@"Tweet sheet has been presented.");
+    }];
+}
+
+
 #pragma mark - Twitter items
 
 - (IBAction)pressedTwitterButton{
@@ -83,8 +129,10 @@
         });
     };
     
+    NSString *string = [_post.content substringToIndex:40];
+    
     // set the initial body of the tweet
-    [tweetSheet setInitialText:@"just setting up my tweet"];
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"%@:%@... ",_post.title, string]];
     
     //  Add an URL to the Tweet.  You can add multiple URLs.
     if (![tweetSheet addURL:[NSURL URLWithString:@"http://www.jayemko.com/"]]){

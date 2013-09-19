@@ -19,7 +19,7 @@
 @property (nonatomic, strong) Post *post;
 @property int index;
 
-- (IBAction)pressedShareButton;
 - (IBAction)pressedTwitterButton;
+- (IBAction)pressedFacebookButton;
 
 @end

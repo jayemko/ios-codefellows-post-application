@@ -197,12 +197,11 @@
                                         <rect key="frame" x="0.0" y="459" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <items>
-                                            <barButtonItem image="upload-25.png" width="44" id="lbs-6W-bEi">
+                                            <barButtonItem image="facebook-25.png" width="44" id="eeU-u2-zlP">
                                                 <connections>
-                                                    <action selector="pressedShareButton" destination="beA-Jj-kvH" id="UK8-d0-aJW"/>
+                                                    <action selector="pressedFacebookButton" destination="beA-Jj-kvH" id="fye-Fg-iOU"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem image="facebook-25.png" width="44" id="eeU-u2-zlP"/>
                                             <barButtonItem image="twitter-25.png" width="44" id="aGk-BJ-fVh">
                                                 <connections>
                                                     <action selector="pressedTwitterButton" destination="beA-Jj-kvH" id="gzg-Dk-PZB"/>
@@ -261,7 +260,6 @@
     <resources>
         <image name="facebook-25.png" width="25" height="25"/>
         <image name="twitter-25.png" width="25" height="25"/>
-        <image name="upload-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

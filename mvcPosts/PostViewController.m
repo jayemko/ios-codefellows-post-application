@@ -21,7 +21,7 @@
     self = [super initWithStyle:style];
     if(self){
         // make custom
-
+        
     }
     
     return self;
@@ -31,15 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // get data from rails server
-//    [Post remoteAllAsync:^(NSArray *allRemote, NSError *error) {
-//        _posts = [NSMutableArray arrayWithArray:allRemote];
-//       [self.tableView reloadData];
-//    }];
-    
-    // load the rails server with some posts
-    _posts = [self fillPostsWithPosts];
+    [Post remoteAllAsync:^(NSArray *allRemote, NSError *error) {
+        _posts = [NSMutableArray arrayWithArray:allRemote];
+        [self.tableView reloadData];
+    }];
+    NSLog(@"Post count: %d", [_posts count]);
+    //        _posts = [self fillPostsWithPosts];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -60,7 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifer = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer forIndexPath:indexPath];
-//    NSLog(@"Cell Identifier: %@", cell);
+    //    NSLog(@"Cell Identifier: %@", cell);
     
     Post *post = [_posts objectAtIndex:indexPath.row];
     
@@ -86,7 +84,7 @@
     }
     
     if([segue.identifier isEqualToString:@"showNewPost"]){
-//        NSLog(@"segue showNewPost");
+        //        NSLog(@"segue showNewPost");
         
         NewPostViewController *pvc = (NewPostViewController *)segue.destinationViewController;
         pvc.postArray = _posts;
@@ -113,14 +111,15 @@
     // add some authors to example posts
     for (int i = 0; i < [tempArray count]; i++){
         Post *temp = tempArray[i];
+        temp.postcolor = [PostColor makeRandomPostColor];
         temp.username = usernames[i];
         temp.content = [self fillContent];
-        NSLog(@"Color: %d", temp.postcolor);
-        temp.postcolor = [PostColor makeRandomPostColor];
+        NSLog(@"Color: %@", temp.postcolor);
         [temp remoteCreate:&error];
     }
     return tempArray;
 }
+
 
 // filler text
 - (NSString *)fillContent{

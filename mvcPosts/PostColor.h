@@ -22,12 +22,13 @@
 }
 
 @property (nonatomic, strong) PostColor *PColor;
-@property int remoteColor;
+@property (nonatomic, strong) NSNumber *remoteColor;
+@property float kAlpha;
 
 // convenience constructor
-+ (PostColor *)makePostColor:(int)color;
-+ (int)makeRandomPostColor;
++ (PostColor *)makePostColor:(NSNumber*)color;
++ (NSNumber*)makeRandomPostColor;
 // designated initializer
-- (PostColor *)initWithPColor:(int)color;
+- (PostColor *)initWithPColor:(NSNumber*)color;
 
 @end

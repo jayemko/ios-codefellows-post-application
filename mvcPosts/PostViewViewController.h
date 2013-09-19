@@ -19,4 +19,6 @@
 @property (nonatomic, strong) Post *post;
 @property int index;
 
+- (IBAction)pressedShareButton;
+
 @end

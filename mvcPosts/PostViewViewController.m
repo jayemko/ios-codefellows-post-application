@@ -9,6 +9,7 @@
 #import "PostViewViewController.h"
 #import "EditPostViewController.h"
 #import "PostColor.h"
+#import <Social/Social.h>
 
 @interface PostViewViewController ()
 
@@ -40,6 +41,14 @@
         vc.postArray = _posts;
         vc.index = _index;
     }
+}
+
+#pragma mark - Button callbacks
+
+- (IBAction)pressedShareButton{
+    NSLog(@"Share button was pressed");
+    UIActivityViewController *sharesheet = [[UIActivityViewController alloc] initWithActivityItems:@[self] applicationActivities:nil];
+    [self presentViewController:sharesheet animated:YES completion:nil];
 }
 
 @end

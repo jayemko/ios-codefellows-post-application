@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mvcPosts/PostColor.h"
-            timestampString = "401071697.211934"
+            timestampString = "401314360.512025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-initWithPColor:"
             landmarkType = "4">
          </BreakpointContent>

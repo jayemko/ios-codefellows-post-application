@@ -17,6 +17,7 @@
         _title = title;
         _username = nil;
         _content = nil;
+        _postcolor = 0;
         _postcolor = [PostColor makeRandomPostColor];
         _timestamp = [self formattedDate];
         

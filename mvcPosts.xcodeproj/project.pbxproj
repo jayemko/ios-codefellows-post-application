@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C07C63C17EB9C4000BCEC5D /* upload-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C07C63B17EB9C4000BCEC5D /* upload-25.png */; };
 		3C1FF2CF17DF60610050B803 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2CE17DF60610050B803 /* Foundation.framework */; };
 		3C1FF2D117DF60610050B803 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2D017DF60610050B803 /* CoreGraphics.framework */; };
 		3C1FF2D317DF60610050B803 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2D217DF60610050B803 /* UIKit.framework */; };
@@ -32,6 +33,9 @@
 		3C45CA8717E0D19200801972 /* PostColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C45CA8617E0D19200801972 /* PostColor.m */; };
 		3C45CA8A17E1235D00801972 /* EditPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C45CA8917E1235D00801972 /* EditPostViewController.m */; };
 		3C7B27C517DFC5700010C15F /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B27C417DFC5700010C15F /* NewPostViewController.m */; };
+		3CFE3A3817EB6B8700EC44B0 /* upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFE3A3717EB6B8700EC44B0 /* upload-50.png */; };
+		3CFE3A7217EB951A00EC44B0 /* upload-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFE3A7117EB951A00EC44B0 /* upload-32.png */; };
+		3CFE3A7417EB98B200EC44B0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFE3A7317EB98B200EC44B0 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C07C63B17EB9C4000BCEC5D /* upload-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-25.png"; path = "../../../_design/iOS7_icons/Very_Basic/upload/upload-25.png"; sourceTree = "<group>"; };
 		3C1FF2CB17DF60610050B803 /* mvcPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvcPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1FF2CE17DF60610050B803 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C1FF2D017DF60610050B803 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +92,9 @@
 		3C45CA8917E1235D00801972 /* EditPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPostViewController.m; sourceTree = "<group>"; };
 		3C7B27C317DFC5700010C15F /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		3C7B27C417DFC5700010C15F /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		3CFE3A3717EB6B8700EC44B0 /* upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload-50.png"; sourceTree = "<group>"; };
+		3CFE3A7117EB951A00EC44B0 /* upload-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-32.png"; path = "../../../_design/iOS7_icons/Very_Basic/upload/upload-32.png"; sourceTree = "<group>"; };
+		3CFE3A7317EB98B200EC44B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFE3A7417EB98B200EC44B0 /* Social.framework in Frameworks */,
 				3C1FF2D117DF60610050B803 /* CoreGraphics.framework in Frameworks */,
 				3C1FF2D317DF60610050B803 /* UIKit.framework in Frameworks */,
 				3C1FF2CF17DF60610050B803 /* Foundation.framework in Frameworks */,
@@ -135,6 +144,7 @@
 		3C1FF2CD17DF60610050B803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CFE3A7317EB98B200EC44B0 /* Social.framework */,
 				3C1FF2CE17DF60610050B803 /* Foundation.framework */,
 				3C1FF2D017DF60610050B803 /* CoreGraphics.framework */,
 				3C1FF2D217DF60610050B803 /* UIKit.framework */,
@@ -147,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				3C1FF2E017DF60610050B803 /* Main.storyboard */,
+				3C07C63B17EB9C4000BCEC5D /* upload-25.png */,
+				3CFE3A7117EB951A00EC44B0 /* upload-32.png */,
+				3CFE3A3717EB6B8700EC44B0 /* upload-50.png */,
 				3C1FF2DD17DF60610050B803 /* PostAppDelegate.h */,
 				3C1FF2DE17DF60610050B803 /* PostAppDelegate.m */,
 				3C1FF30317DF61480050B803 /* Post.h */,
@@ -297,6 +310,9 @@
 				3C1FF2E717DF60610050B803 /* Images.xcassets in Resources */,
 				3C1FF2D917DF60610050B803 /* InfoPlist.strings in Resources */,
 				3C1FF2E217DF60610050B803 /* Main.storyboard in Resources */,
+				3CFE3A7217EB951A00EC44B0 /* upload-32.png in Resources */,
+				3CFE3A3817EB6B8700EC44B0 /* upload-50.png in Resources */,
+				3C07C63C17EB9C4000BCEC5D /* upload-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

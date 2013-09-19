@@ -18,7 +18,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *usernameInput;
 @property (nonatomic, strong) IBOutlet UITextView *contentInput;
 @property (nonatomic, strong) IBOutlet UIView *postColorLayerView;
-@property int postColor;
+@property (nonatomic, strong) NSNumber *postColor;
 
 @property int MIN_LENGTH;
 @property int index;

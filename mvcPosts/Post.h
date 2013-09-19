@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *timestamp;
 //@property (nonatomic, strong) PostColor *color;
-@property int postcolor;
+@property (nonatomic, strong) NSNumber *postcolor;
 
 // designated initializer
 - (id)initWithTitle:(NSString *)title;

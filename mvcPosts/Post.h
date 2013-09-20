@@ -16,8 +16,8 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *timestamp;
-//@property (nonatomic, strong) PostColor *color;
 @property (nonatomic, strong) NSNumber *postcolor;
+@property (nonatomic, strong) UIImage *postImage;
 
 // designated initializer
 - (id)initWithTitle:(NSString *)title;

@@ -84,11 +84,16 @@
     
     // set initial content of the facebook post
     [facebookSheet setInitialText:[NSString stringWithFormat:@"%@: By %@ \n %@",_post.title, _post.username, _post.content]];
-//    
-//    //  add an URL to the post
-//    if (![facebookSheet addURL:[NSURL URLWithString:@"http://www.jayemko.com/"]]){
-//        NSLog(@"Unable to add the URL!");
-//    }
+    
+    // if there is a picture, add it
+    if (_post.postImage) {
+        [facebookSheet addImage:_post.postImage];
+    }
+    //
+    //    //  add an URL to the post
+    //    if (![facebookSheet addURL:[NSURL URLWithString:@"http://www.jayemko.com/"]]){
+    //        NSLog(@"Unable to add the URL!");
+    //    }
     
     // present the tweet sheet to the user
     [self presentViewController:facebookSheet animated:NO completion:^{
@@ -134,9 +139,14 @@
     // set the initial body of the tweet
     [tweetSheet setInitialText:[NSString stringWithFormat:@"%@:%@... ",_post.title, string]];
     
-    //  Add an URL to the Tweet.  You can add multiple URLs.
+    //  add an URL to the Tweet.  You can add multiple URLs.
     if (![tweetSheet addURL:[NSURL URLWithString:@"http://www.jayemko.com/"]]){
         NSLog(@"Unable to add the URL!");
+    }
+    
+    // if there is a picture, add it
+    if (_post.postImage){
+        [tweetSheet addImage:_post.postImage];
     }
     
     // present the tweet sheet to the user

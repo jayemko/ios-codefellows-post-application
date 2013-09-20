@@ -31,17 +31,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        [self syncPosts];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
+
+- (void)syncPosts{
     // get data from rails server
     [Post remoteAllAsync:^(NSArray *allRemote, NSError *error) {
+        if(error){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Unable to get data from the Rails servcer" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Retry", nil];
+            [alert show];
+        }
         _posts = [NSMutableArray arrayWithArray:allRemote];
         [self.tableView reloadData];
     }];
     NSLog(@"Post count: %d", [_posts count]);
     //        _posts = [self fillPostsWithPosts];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -124,6 +133,14 @@
 // filler text
 - (NSString *)fillContent{
     return @"     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum augue magna. Nunc posuere arcu in dolor feugiat facilisis. Nullam tristique eget nulla eu pulvinar. Nullam velit nibh, pharetra eu ante in, sollicitudin posuere est. Praesent sit amet ante dignissim, condimentum metus ac, venenatis dolor. Pellentesque neque dolor, molestie nec neque id, elementum euismod nisi. Mauris adipiscing elementum dui, vitae bibendum urna auctor a. Nunc faucibus nisl vel lectus semper interdum. Integer nisi nunc, porta vel porttitor sed, commodo et tellus. Quisque et tellus quis nibh lobortis suscipit. Aliquam ac lacinia odio. Curabitur molestie eleifend nulla, sit amet ornare ipsum interdum id. Mauris vestibulum orci at nisl sodales, et sodales elit dapibus. In rhoncus placerat odio. Nulla facilisi. Vivamus faucibus purus consectetur sollicitudin mollis.Maecenas sollicitudin, eros luctus fringilla laoreet, purus tortor laoreet quam, et pulvinar mauris turpis sit amet ante. Nunc id turpis ligula. Integer sem tellus, semper eget sodales nec, lacinia sit amet tellus. Praesent ut nisl tristique, hendrerit nisl in, suscipit dolor. Etiam aliquet enim eget arcu aliquam, gravida consectetur velit molestie. Donec malesuada fermentum justo, quis tincidunt odio sagittis vel. Praesent eleifend luctus orci a iaculis. Suspendisse sit amet augue dictum, interdum neque vel, adipiscing enim.Aliquam dictum magna nec urna auctor, quis mollis eros luctus. Sed id congue neque. Nullam ultricies risus et tellus malesuada scelerisque. Suspendisse luctus, neque eleifend bibendum tincidunt, nunc velit ornare augue, sed consectetur magna nulla aliquet nisl. Vivamus lobortis, nibh sit amet placerat volutpat, nulla felis tempor est, mattis rutrum dolor leo ut nulla. Quisque aliquam, justo quis dictum consequat, arcu erat dignissim risus, eu dictum odio lacus id odio. Donec sodales diam non odio imperdiet cursus. Sed vitae pulvinar dolor, sit amet volutpat massa. Nulla vitae ligula consequat, eleifend augue a, faucibus nisi. Sed vulputate tincidunt neque sed tristique.";
+}
+
+#pragma mark - Error items
+
+- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1){
+        [self syncPosts];
+    }
 }
 
 

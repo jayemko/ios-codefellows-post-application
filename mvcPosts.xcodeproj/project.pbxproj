@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C07C63C17EB9C4000BCEC5D /* upload-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C07C63B17EB9C4000BCEC5D /* upload-25.png */; };
 		3C07C64017EBA5B600BCEC5D /* twitter-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C07C63F17EBA5B600BCEC5D /* twitter-25.png */; };
 		3C07C64217EBA5CF00BCEC5D /* facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C07C64117EBA5CF00BCEC5D /* facebook-25.png */; };
+		3C07C64717EBB32300BCEC5D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C07C64617EBB32300BCEC5D /* CameraViewController.m */; };
+		3C07C64917EBB41200BCEC5D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C07C64817EBB41200BCEC5D /* MobileCoreServices.framework */; };
+		3C07C68717EBC5D400BCEC5D /* photo-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C07C68617EBC5D400BCEC5D /* photo-32.png */; };
 		3C1FF2CF17DF60610050B803 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2CE17DF60610050B803 /* Foundation.framework */; };
 		3C1FF2D117DF60610050B803 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2D017DF60610050B803 /* CoreGraphics.framework */; };
 		3C1FF2D317DF60610050B803 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1FF2D217DF60610050B803 /* UIKit.framework */; };
@@ -49,9 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C07C63B17EB9C4000BCEC5D /* upload-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-25.png"; path = "../../../_design/iOS7_icons/Very_Basic/upload/upload-25.png"; sourceTree = "<group>"; };
 		3C07C63F17EBA5B600BCEC5D /* twitter-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-25.png"; sourceTree = "<group>"; };
 		3C07C64117EBA5CF00BCEC5D /* facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-25.png"; sourceTree = "<group>"; };
+		3C07C64517EBB32300BCEC5D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		3C07C64617EBB32300BCEC5D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		3C07C64817EBB41200BCEC5D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3C07C68617EBC5D400BCEC5D /* photo-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-32.png"; sourceTree = "<group>"; };
 		3C1FF2CB17DF60610050B803 /* mvcPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvcPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1FF2CE17DF60610050B803 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C1FF2D017DF60610050B803 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C07C64917EBB41200BCEC5D /* MobileCoreServices.framework in Frameworks */,
 				3CFE3A7417EB98B200EC44B0 /* Social.framework in Frameworks */,
 				3C1FF2D117DF60610050B803 /* CoreGraphics.framework in Frameworks */,
 				3C1FF2D317DF60610050B803 /* UIKit.framework in Frameworks */,
@@ -122,6 +128,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C07C64317EBB27A00BCEC5D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3C1FF30317DF61480050B803 /* Post.h */,
+				3C1FF30417DF61480050B803 /* Post.m */,
+				3C45CA8517E0D19200801972 /* PostColor.h */,
+				3C45CA8617E0D19200801972 /* PostColor.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		3C07C64417EBB29600BCEC5D /* NSRails */ = {
+			isa = PBXGroup;
+			children = (
+				3C3CFCA117E796C700AC5F1E /* NSRails.h */,
+				3C3CFCA217E796C700AC5F1E /* NSRConfig.h */,
+				3C3CFCA317E796C700AC5F1E /* NSRConfig.m */,
+				3C3CFCA417E796C700AC5F1E /* NSRRemoteManagedObject.h */,
+				3C3CFCA517E796C700AC5F1E /* NSRRemoteManagedObject.m */,
+				3C3CFCA617E796C700AC5F1E /* NSRRemoteObject.h */,
+				3C3CFCA717E796C700AC5F1E /* NSRRemoteObject.m */,
+				3C3CFCA817E796C700AC5F1E /* NSRRequest.h */,
+				3C3CFCA917E796C700AC5F1E /* NSRRequest.m */,
+			);
+			name = NSRails;
+			sourceTree = "<group>";
+		};
 		3C1FF2C217DF60610050B803 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +179,7 @@
 		3C1FF2CD17DF60610050B803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C07C64817EBB41200BCEC5D /* MobileCoreServices.framework */,
 				3CFE3A7317EB98B200EC44B0 /* Social.framework */,
 				3C1FF2CE17DF60610050B803 /* Foundation.framework */,
 				3C1FF2D017DF60610050B803 /* CoreGraphics.framework */,
@@ -158,14 +192,11 @@
 		3C1FF2D417DF60610050B803 /* mvcPosts */ = {
 			isa = PBXGroup;
 			children = (
+				3C07C64317EBB27A00BCEC5D /* model */,
 				3C1FF2E017DF60610050B803 /* Main.storyboard */,
-				3C07C63B17EB9C4000BCEC5D /* upload-25.png */,
+				3C07C68617EBC5D400BCEC5D /* photo-32.png */,
 				3C1FF2DD17DF60610050B803 /* PostAppDelegate.h */,
 				3C1FF2DE17DF60610050B803 /* PostAppDelegate.m */,
-				3C1FF30317DF61480050B803 /* Post.h */,
-				3C1FF30417DF61480050B803 /* Post.m */,
-				3C45CA8517E0D19200801972 /* PostColor.h */,
-				3C45CA8617E0D19200801972 /* PostColor.m */,
 				3C45CA8817E1235D00801972 /* EditPostViewController.h */,
 				3C45CA8917E1235D00801972 /* EditPostViewController.m */,
 				3C7B27C317DFC5700010C15F /* NewPostViewController.h */,
@@ -174,17 +205,11 @@
 				3C1FF30717DF67220050B803 /* PostViewViewController.m */,
 				3C1FF2E317DF60610050B803 /* PostViewController.h */,
 				3C1FF2E417DF60610050B803 /* PostViewController.m */,
+				3C07C64517EBB32300BCEC5D /* CameraViewController.h */,
+				3C07C64617EBB32300BCEC5D /* CameraViewController.m */,
 				3C1FF2E617DF60610050B803 /* Images.xcassets */,
+				3C07C64417EBB29600BCEC5D /* NSRails */,
 				3C3CFC9C17E796C700AC5F1E /* Categories */,
-				3C3CFCA117E796C700AC5F1E /* NSRails.h */,
-				3C3CFCA217E796C700AC5F1E /* NSRConfig.h */,
-				3C3CFCA317E796C700AC5F1E /* NSRConfig.m */,
-				3C3CFCA417E796C700AC5F1E /* NSRRemoteManagedObject.h */,
-				3C3CFCA517E796C700AC5F1E /* NSRRemoteManagedObject.m */,
-				3C3CFCA617E796C700AC5F1E /* NSRRemoteObject.h */,
-				3C3CFCA717E796C700AC5F1E /* NSRRemoteObject.m */,
-				3C3CFCA817E796C700AC5F1E /* NSRRequest.h */,
-				3C3CFCA917E796C700AC5F1E /* NSRRequest.m */,
 				3C1FF2D517DF60610050B803 /* Supporting Files */,
 			);
 			path = mvcPosts;
@@ -312,7 +337,7 @@
 				3C07C64217EBA5CF00BCEC5D /* facebook-25.png in Resources */,
 				3C1FF2D917DF60610050B803 /* InfoPlist.strings in Resources */,
 				3C1FF2E217DF60610050B803 /* Main.storyboard in Resources */,
-				3C07C63C17EB9C4000BCEC5D /* upload-25.png in Resources */,
+				3C07C68717EBC5D400BCEC5D /* photo-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C07C64717EBB32300BCEC5D /* CameraViewController.m in Sources */,
 				3C1FF2DF17DF60610050B803 /* PostAppDelegate.m in Sources */,
 				3C45CA8717E0D19200801972 /* PostColor.m in Sources */,
 				3C3CFCAE17E796C700AC5F1E /* NSRRemoteObject.m in Sources */,
